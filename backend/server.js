@@ -2,7 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const userRoute = require('./backend/routes/userRoute');
+const userRoute = require('./routes/userRoute');
 
 // Create an Express application
 const app = express();
