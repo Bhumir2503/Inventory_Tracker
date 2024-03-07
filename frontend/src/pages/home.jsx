@@ -26,7 +26,7 @@ function Home() {
         
         <div className="actionbutton">
           <a href="/register" className="button">Get Started</a>
-          <a href="/login" className='link'>Login <img src={angle} alt="" /></a>
+          <a href="/login" className='button'>Login</a>
         </div>
       </div>
       <div className="right">

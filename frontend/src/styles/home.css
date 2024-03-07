@@ -9,24 +9,28 @@
   
   
     .left {
-            flex: 0.5;
+            flex: 0.75;
     
         h1{
             margin-bottom: 20px;
             font-size: 50px;
+            line-height: 1.1;
         }
 
         h2{
             margin-bottom: 0px;
             font-size: 25px;
             color: #5f6c7b;
+            line-height: 1.1;
         }
     
         .list {
             display: flex;
             align-items: center;
             color: #5f6c7b;
-            font-size: 20px
+            font-size: 20px;
+            margin-bottom: 20px;
+            margin-top: 20px;
         }
         
         .list img {
@@ -36,6 +40,8 @@
 
         .list p{
             margin-bottom: 0px;
+            line-height: 1.1;
+            margin-top: 0px;
         }
         
         .actionbutton {
@@ -43,39 +49,21 @@
             justify-content: space-around;
             width: 200px;
             margin-top: 40px;
-            margin-left: auto;
-            margin-right: auto;
             width: 70%;
         }
         
         .actionbutton .button {
-            color: white;
+            color: #eeeeef;
             background-color: #3da9fc;
             padding: 10px 20px;
             text-decoration: none;
             text-align: center;
             border-radius: 5px;
+            width: 100px;
         }
         
         .actionbutton .button:hover{
             background-color: #1599ff;
-        }
-
-        .actionbutton .link {
-            color: #3da9fc;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-
-            img{
-                width: 20px;
-            }
-        }
-
-        .actionbutton .link:hover{
-            color: #1599ff;
         }
     }   
 
