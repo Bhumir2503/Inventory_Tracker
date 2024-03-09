@@ -1,0 +1,27 @@
+.navbar-home {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0px 20px;
+    background-color: #fffffe;
+    position: fixed;
+}
+
+.navbar-home__logo {
+    display: flex;
+    align-items: center;
+
+    img {
+        height: 30px;
+    }
+    
+    a{
+        text-decoration: none;
+        color: black;
+    
+        h3{
+            margin-left: 10px;
+            margin-top: 25px;
+        }
+    }
+}
