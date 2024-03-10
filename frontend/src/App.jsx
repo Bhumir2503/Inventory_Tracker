@@ -1,4 +1,5 @@
 import React from 'react'
+import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
 import PageNotFound from './pages/pageNotFound'
@@ -31,17 +32,20 @@ function App() {
   return (
     <BrowserRouter>
       {navbar}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/contact" element={<Contacts />} />
-        <Route path="/inventory" element={<Inventory />} />
-        <Route path="/purchase" element={<Purchases />} />
-        <Route path="/sales" element={<Sales />} />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
+      
+      <div className="routes">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/contact" element={<Contacts />} />
+          <Route path="/inventory" element={<Inventory />} />
+          <Route path="/purchase" element={<Purchases />} />
+          <Route path="/sales" element={<Sales />} />
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </div>
     </BrowserRouter>
   )
 }

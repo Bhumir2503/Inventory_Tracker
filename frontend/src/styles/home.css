@@ -54,7 +54,7 @@
         
         .actionbutton .button {
             color: #eeeeef;
-            background-color: #3da9fc;
+            background-color: #6246ea;
             padding: 10px 20px;
             text-decoration: none;
             text-align: center;
@@ -63,7 +63,7 @@
         }
         
         .actionbutton .button:hover{
-            background-color: #3d8afc;
+            box-shadow: 0 0 2px 0 black;
         }
     }   
 
