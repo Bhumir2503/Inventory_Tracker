@@ -21,8 +21,8 @@ function NavbarUser(){
                         <li><a href="/dashboard"><img src={dashboard} alt="Dashboard" /></a></li>
                         <li><a href="/contact"><img src={contact} alt="" /></a></li>
                         <li><a href="/inventory"><img src={inventory} alt="" /></a></li>
-                        <li><a href="/purchase"><img src={purchase} alt="" /></a></li>
-                        <li><a href="/sales"><img src={sale} alt="" /></a></li>
+                        {/* <li><a href="/purchase"><img src={purchase} alt="" /></a></li>
+                        <li><a href="/sales"><img src={sale} alt="" /></a></li> */}
                     </ul>
                     <a href="/logout"><img className='logout' src={logout} alt="" /></a>
                 </div>
