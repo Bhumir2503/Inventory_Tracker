@@ -22,7 +22,7 @@ app.use(cors({
 // Use the express.json() middleware
 app.use('/', userRoute);
 
-app.get('/test', (req, res) => {
+app.get('/backend/test', (req, res) => {
   res.send('hi');
 });
 
