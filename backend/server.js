@@ -22,6 +22,9 @@ app.use(cors({
 // Use the express.json() middleware
 app.use('/', userRoute);
 
+app.get('/test', (req, res) => {
+  res.send('hi');
+});
 
 // Start the server
 app.listen(port, () => {
