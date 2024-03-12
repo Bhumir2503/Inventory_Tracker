@@ -71,7 +71,7 @@ const loginUser = async (req, res) => {
 
     // If the password is invalid, send an error response
     if(!validPassword){
-        res.status(401).json("Invalid Password");
+        return res.status(401).json("Invalid Password");
     }
 
     // If the password is valid, create a JWT for the user
