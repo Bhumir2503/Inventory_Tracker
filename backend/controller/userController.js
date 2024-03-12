@@ -99,12 +99,16 @@ const logoutUser = async (req, res) => {
 
 // Update a user by ID
 const updateUserById = async (req, res) => {
-    res.send('Update User By ID');
+    const { id, username, email } = req.body;
+    await User.findByIdAndUpdate(id, {username, email});
+    res.status(200).json("User Updated");
 };
 
 // Delete a user by ID
 const deleteUserById = async (req, res) => {
-    res.send('Delete User By ID');
+    const { id } = req.body;
+    await User.findByIdAndDelete(id);
+    res.status(200).json("User Deleted");
 };
 
 // Exporting the functions to be used in other modules

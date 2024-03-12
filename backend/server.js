@@ -16,11 +16,15 @@ mongoose.connect(process.env.MONGO_URI)
 
 // Use the cors middleware
 app.use(cors({ 
-  origin: '*'
+  origin: ['http://localhost', 'https://invensort.com'],
+  credentials: true
 }));
 
 // Use the express.json() middleware
-app.use('/', userRoute);
+app.use(express.json());
+
+// Use the express.json() middleware
+app.use('/backend/', userRoute);
 
 app.get('/backend/test', (req, res) => {
   res.send('hi');
