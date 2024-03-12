@@ -8,7 +8,7 @@ const {
     logoutUser,
     updateUserById,
     deleteUserById
-} = require('../controllers/userController');
+} = require('../controller/userController');
 
 // Create a new router object
 const router = express.Router();

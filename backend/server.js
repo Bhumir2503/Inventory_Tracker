@@ -3,10 +3,11 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoute = require('./routes/userRoute');
+require('dotenv');
 
 // Create an Express application
 const app = express();
-const port = 8080;
+const port = process.env.PORT;
 
 // Connect to the Mongodb database
 mongoose.connect(process.env.MONGO_URI)
@@ -14,8 +15,8 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.log(err));
 
 // Use the cors middleware
-app.use(cors({
-  origin: 'http://localhost:80' // restrict calls to those this address
+app.use(cors({ 
+  origin: '*'
 }));
 
 // Use the express.json() middleware
