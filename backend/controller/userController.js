@@ -90,6 +90,19 @@ const loginUser = async (req, res) => {
     }
 }
 
+const verifyToken = async (req, res) => {
+    const token = req.cookies.token;
+    if (!token) return res.status(401).json("You need to Login");
+
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+        if (err) {
+            return res.status(401).json("You need to Login");
+        }
+        res.status(200).json(user);
+    });
+
+}
+
 // Define a function to handle user logout
 const logoutUser = async (req, res) => {
     // Clear the cookie containing the JWT
@@ -115,6 +128,7 @@ const deleteUserById = async (req, res) => {
 module.exports = {
     registerUser,
     loginUser,
+    verifyToken,
     logoutUser,
     updateUserById,
     deleteUserById

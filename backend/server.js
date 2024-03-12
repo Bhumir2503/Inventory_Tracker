@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const userRoute = require('./routes/userRoute');
+const cookieParser = require('cookie-parser');
 require('dotenv');
 
 // Create an Express application
@@ -23,8 +24,12 @@ app.use(cors({
 // Use the express.json() middleware
 app.use(express.json());
 
+// Use the cookieParser middleware
+app.use(cookieParser());
+
 // Use the express.json() middleware
 app.use('/backend/', userRoute);
+
 
 app.get('/backend/test', (req, res) => {
   res.send('hi');

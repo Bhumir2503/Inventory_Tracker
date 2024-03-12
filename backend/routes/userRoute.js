@@ -5,6 +5,7 @@ const express = require('express');
 const {
     registerUser,
     loginUser,
+    verifyToken,
     logoutUser,
     updateUserById,
     deleteUserById
@@ -20,6 +21,10 @@ router.post('/user/register', registerUser);
 // Define a POST route for logging in a user
 // When a POST request is made to '/login', the loginUser function from userController is called
 router.post('/user/login', loginUser);
+
+// Define a POST route for verifying a user's token
+// When a POST request is made to '/verifyToken', the verifyToken function from userController is called
+router.post('/user/verifyToken', verifyToken);
 
 // Define a POST route for logging out a user
 // When a POST request is made to '/logout', the logoutUser function from userController is called

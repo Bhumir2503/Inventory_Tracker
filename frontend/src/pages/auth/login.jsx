@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/login.css'
 import logo from '../../assets/logo.svg';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 axios.defaults.withCredentials = true;
 
@@ -30,6 +30,36 @@ function Login() {
     }
   };
 
+
+  const handleTokenExist = async () => {
+    if (document.cookie.includes('token')) {
+      // Extract the token from the cookie
+      const token = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('token='))
+        .split('=')[1];
+  
+      try {
+        const response = await axios.post(`${server}/backend/user/verifyToken`, { token });
+        console.log(response.data);
+        if(response.data === 'You need to Login') {
+          console.log('Token is invalid');
+        }else {
+          window.location.href = '/dashboard';
+        }
+      } catch(err) {
+        console.log('An error occurred');
+        //delete the token
+        document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      }
+    } else {
+      console.log('No token found');
+    }
+  };
+  
+  useEffect(() => {
+    handleTokenExist();
+  }, []);
 
   return (
     <div className='login'>
