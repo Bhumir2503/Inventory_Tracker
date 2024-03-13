@@ -6,7 +6,7 @@ const {
     createItem,
     updateItemById,
     deleteItemById
-} = require
+} = require ('../controller/itemController');
 
 
 const router = express.Router();

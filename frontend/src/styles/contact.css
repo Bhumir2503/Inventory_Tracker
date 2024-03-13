@@ -4,68 +4,140 @@
   height: 100vh;
 
 
-  .searchbar{
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    .searchbar{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
 
-    input {
-        padding: 10px;
-        border-radius: 10px;
-        border: none;
-        width: 500px;
-        font-weight: bold;
-        background-color: #f1f3f4;
+        input {
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            width: 500px;
+            font-weight: bold;
+            background-color: #f1f3f4;
+        }
+
+        input:focus {
+            outline-color: #6246ea;
+        }
     }
 
-    input:focus {
-        outline-color: #6246ea;
-    }
-  }
+    .contacts{
+        width: 90%;
+        height: 85%;
+        margin: 0 auto;
+        background-color: #d1d1e9;
+        padding: 20px;
+        border-radius: 35px;
 
-  .contacts{
-    width: 90%;
-    height: 85%;
-    margin: 0 auto;
-    background-color: #d1d1e9;
-    padding: 20px;
-    border-radius: 35px;
-    h3{
-        margin: 0;
-        font-size: 40px;
-    }
+        h3{
+            margin: 0;
+            font-size: 40px;
+        }
 
-    .contactInfo{
-        width: 100%;
+        .contactTitles {
+                display: flex;
+                
+                .name{
+                    font-size: 20px;
+                    font-weight: bold;
+                    width: 19%;
+                }
+                .phone{
+                    font-size: 20px;
+                    font-weight: bold;
+                    width: 19%;
+                }
+                .email{
+                    font-size: 20px;
+                    font-weight: bold;
+                    width: 19%;
+                }
+                .title {
+                    font-size: 20px;
+                    font-weight: bold;
+                    width: 19%;
+                }
+                .company {
+                    font-size: 20px;
+                    font-weight: bold;
+                    width: 19%;
+                }
+                
+            }
 
-            outline: none;
-            thead{
-                width: 100%;
-                tr{
-                    th{
+        .contactList{
+            max-height: 83%; /* Adjust this value as needed */
+            overflow-y: auto;
+            
+            .contactitems {
+                margin-top: 10px;
+
+                .contact {
+                    display: flex;
+                    margin-bottom: 25px;
+                    
+                    .name{
+                        font-size: 20px;
+                        width: 19%;
+                    }
+                    .phone{
+                        font-size: 20px;
+                        width: 19%;
+                    }
+                    .email{
+                        font-size: 20px;
+                        width: 19%;
+                    }
+                    .title {
+                        font-size: 20px;
+                        width: 19%;
+                    }
+                    .company {
+                        font-size: 20px;
+                        width: 19%;
+                    }
+                    
+                    button{
+                        background-color: #6246ea;
+                        color: white;
+                        border: none;
+                        border-radius: 10px;
                         padding: 10px;
-                        text-align: left;
-                        border-bottom: 1px solid #6246ea;
+                        margin-right: 10px;
+                        cursor: pointer;;
+                        img{
+                            width: 20px;
+                            height: 20px;
+                        }
                     }
                 }
-            }
-            tbody{
-                width: 100%;
-
-                tr{
-
-                    &:hover{
-                        background-color: #f1f3f4;
-                    }
-                    td{
-                        padding: 10px;
-                        text-align: left;
-                    }
+                
+                .contact p {
+                    margin: 0;
                 }
             }
-        
-    }
-  }
 
+        }
+
+        .contactList::-webkit-scrollbar {
+            width: 10px;
+          }
+          
+          .contactList::-webkit-scrollbar-track {
+            background: #f1f1f1;
+          }
+          
+          .contactList::-webkit-scrollbar-thumb {
+            background: #888;
+          }
+          
+          .contactList::-webkit-scrollbar-thumb:hover {
+            background: #555;
+          }
+    
+    }
+    
 }

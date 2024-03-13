@@ -41,7 +41,7 @@ const registerUser = async (req, res) => {
 
         // Create a JWT for the new user
         const token = jwt.sign(
-            {username: newUser.username}, // payload
+            { id: user._id, username: user.username }, // payload
             process.env.JWT_SECRET, // secret key
             { expiresIn: '3d' } // options
         );
