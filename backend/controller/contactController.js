@@ -5,8 +5,13 @@ const jwt = require('jsonwebtoken');
 // Define a function to handle creating a new contact
 const createContact = async (req, res) => {
     // Create a new contact object
+    const token = req.headers.authorization;
+
+    const payload = token.split(" ")[1];
+
+    const decoded = jwt.decode(payload, process.env.JWT_SECRET);
     const newContact = new Contact({
-        userId: req.body.userId,
+        userId: decoded.id,
         contactName: req.body.contactName,
         contactPhone: req.body.contactPhone,
         contactJobTitle: req.body.contactJobTitle,
@@ -59,12 +64,16 @@ const getContactByNameandUserId = async (req, res) => {
 // Define a function to handle updating a contact by their ID
 const updateContactById = async (req, res) => {
     // Update a contact by their ID
-    res.send("updateContactById");
+    const contact = await Contact.findByIdAndUpdate(req.params.id, req.body);
+    // Send a response
+    res.status(200).json("Contact Updated");
 }
 // Define a function to handle deleting a contact by their ID
 const deleteContactById = async (req, res) => {
     // Delete a contact by their Id
     const contact = await Contact.findByIdAndDelete(req.params.id);
+    // Send a response
+    res.status(200).json("Contact Deleted");
 }
 
 // Export the functions
