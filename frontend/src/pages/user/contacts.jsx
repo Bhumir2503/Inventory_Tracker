@@ -13,16 +13,17 @@ function Contacts() {
   const [addContact, setAddContact] = useState({});
   const [openAdd, setOpenAdd] = useState(false);
 
-  const server = 'http://localhost:5000/backend';
+  const server = 'https://invensort.com';
 
-  const token = document.cookie
+  const tokenCookie = document.cookie
   .split('; ')
-  .find(row => row.startsWith('token='))
-  .split('=')[1];
+  .find(row => row.startsWith('token='));
+
+  const token = tokenCookie ? tokenCookie.split('=')[1] : null;
 
   const searchbarsearch = async () => {
     try{
-      const response = await axios.get(`${server}/contact/getUserIdandName/${searchTerm}`, {
+      const response = await axios.get(`${server}/backend/contact/getUserIdandName/${searchTerm}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
