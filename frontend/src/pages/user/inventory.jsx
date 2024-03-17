@@ -29,6 +29,14 @@ function Inventory(){
                     <button>Edit</button>
                     <button>Delete</button>
                 </div>
+                <div className='inventory-item'>
+                    <h2>Item 4</h2>
+                    <p>Item Description</p>
+                    <p>Price: $0.00</p>
+                    <p>Quantity: 0</p>
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </div>
             </div>
         </div>
     )
